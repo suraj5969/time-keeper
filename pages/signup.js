@@ -58,7 +58,7 @@ const Register = () => {
   //   const error = false;
 
   return (
-    <React.Fragment>
+    <>
       <Head>
         <title>{`SignUp - ${process.env.NEXT_PUBLIC_APP_NAME}`}</title>
       </Head>
@@ -323,7 +323,7 @@ const Register = () => {
           </Container>
         </div>
       </ParticlesAuth>
-    </React.Fragment>
+    </>
   );
 };
 

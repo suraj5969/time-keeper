@@ -45,7 +45,7 @@ const Login = (props) => {
   const error = false; // "Some Error Occured";
 
   return (
-    <React.Fragment>
+    <>
       <Head>
         <title>{`Login - ${process.env.NEXT_PUBLIC_APP_NAME}`}</title>
       </Head>
@@ -229,7 +229,7 @@ const Login = (props) => {
           </Container>
         </div>
       </ParticlesAuth>
-    </React.Fragment>
+    </>
   );
 };
 

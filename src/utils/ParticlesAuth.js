@@ -2,7 +2,7 @@ import React from "react";
 
 const ParticlesAuth = ({ children }) => {
   return (
-    <React.Fragment>
+    <>
       <div className="auth-page-wrapper pt-5">
         <div className="auth-one-bg-position auth-one-bg" id="auth-particles">
           <div className="bg-overlay"></div>
@@ -37,7 +37,7 @@ const ParticlesAuth = ({ children }) => {
           </div>
         </footer>
       </div>
-    </React.Fragment>
+    </>
   );
 };
 
