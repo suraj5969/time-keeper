@@ -56,8 +56,9 @@ const Dashboard = () => {
   );
 };
 
+export default Dashboard;
+
+
 Dashboard.getLayout = function getLayout(page) {
   return <Layout>{page}</Layout>;
 };
-
-export default Dashboard;

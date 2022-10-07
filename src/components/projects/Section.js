@@ -42,10 +42,10 @@ const Section = () => {
                       </div>
                       <div className="col-md">
                         <div>
-                          <h4 className="fw-bold">Velzon - Admin & Dashboard</h4>
+                          <h4 className="fw-bold">Archival</h4>
                           <div className="hstack gap-3 flex-wrap">
                             <div>
-                              <i className="ri-building-line align-bottom me-1"></i> Themesbrand
+                              <i className="ri-building-line align-bottom me-1"></i> Kyriba
                             </div>
                             <div className="vr"></div>
                             <div>
@@ -78,9 +78,9 @@ const Section = () => {
                   </div>
                 </Row>
 
-                <Nav className="nav-tabs-custom border-bottom-0" role="tablist">
+                {/* <Nav className="nav-tabs-custom border-bottom-0" role="tablist">
                   <NavItem>
-                    <NavLink
+                    <NavLi  nk
                       className={classnames({ active: activeTab === "1" }, "fw-semibold")}
                       onClick={() => {
                         toggleTab("1");
@@ -88,7 +88,7 @@ const Section = () => {
                       href="#"
                     >
                       Overview
-                    </NavLink>
+                    </NavLi>
                   </NavItem>
                   <NavItem>
                     <NavLink
@@ -123,7 +123,7 @@ const Section = () => {
                       Team
                     </NavLink>
                   </NavItem>
-                </Nav>
+                </Nav> */}
               </CardBody>
             </div>
           </Card>
@@ -131,9 +131,9 @@ const Section = () => {
       </Row>
       <Row>
         <Col lg={12}>
-          <TabContent activeTab={activeTab} className="text-muted">
-            <TabPane tabId="1">
               <OverviewTab />
+          {/* <TabContent activeTab={activeTab} className="text-muted">
+            <TabPane tabId="1">
             </TabPane>
             <TabPane tabId="2">
               <DocumentsTab />
@@ -144,7 +144,7 @@ const Section = () => {
             <TabPane tabId="4">
               <TeamTab />
             </TabPane>
-          </TabContent>
+          </TabContent> */}
         </Col>
       </Row>
     </React.Fragment>

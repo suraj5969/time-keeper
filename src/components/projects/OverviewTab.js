@@ -36,29 +36,31 @@ const OverviewTab = () => {
           <Card>
             <CardBody>
               <div className="text-muted">
-                <h6 className="mb-3 fw-semibold text-uppercase">Summary</h6>
+                <h6 className="mb-3 fw-semibold text-uppercase">Description</h6>
                 <p>
-                  It will be as simple as occidental in fact, it will be Occidental. To an English
-                  person, it will seem like simplified English, as a skeptical Cambridge friend of
-                  mine told me what Occidental is. The European languages are members of the same
-                  family. Their separate existence is a myth. For science, music, sport, etc, Europe
-                  uses the same vocabulary. The languages only differ in their grammar, their
-                  pronunciation and their most common words.
+                  New Project from Kyriba. It is going to be a system to show and search the
+                  historical records of a suspended system. It will be as simple as occidental in
+                  fact, it will be Occidental. To an English person, it will seem like simplified
+                  English, as a skeptical Cambridge friend of mine told me what Occidental is. The
+                  European languages are members of the same family. Their separate existence is a
+                  myth. For science, music, sport, etc, Europe uses the same vocabulary. The
+                  languages only differ in their grammar, their pronunciation and their most common
+                  words.
                 </p>
 
-                <ul className="ps-4 vstack gap-2">
+                {/* <ul className="ps-4 vstack gap-2">
                   <li>Product Design, Figma (Software), Prototype</li>
                   <li>Four Dashboards : Ecommerce, Analytics, Project,etc.</li>
                   <li>Create calendar, chat and email app pages.</li>
                   <li>Add authentication pages.</li>
                   <li>Content listing.</li>
-                </ul>
+                </ul> */}
 
-                <div>
+                {/* <div>
                   <button type="button" className="btn btn-link link-success p-0">
                     Read more
                   </button>
-                </div>
+                </div> */}
 
                 <div className="pt-3 border-top border-top-dashed mt-4">
                   <Row>
@@ -204,7 +206,7 @@ const OverviewTab = () => {
               </div>
             </CardBody>
           </Card>
-          <Card>
+          {/* <Card>
             <CardHeader className="align-items-center d-flex">
               <h4 className="card-title mb-0 flex-grow-1">Comments</h4>
               <div className="flex-shrink-0">
@@ -227,7 +229,8 @@ const OverviewTab = () => {
               <SimpleBar style={{ height: "300px" }} className="px-3 mx-n3 mb-2">
                 <div className="d-flex mb-4">
                   <div className="flex-shrink-0">
-                    {/* <img src={avatar8} alt="" className="avatar-xs rounded-circle" /> */}
+                    comment below img tag
+                    <img src={avatar8} alt="" className="avatar-xs rounded-circle" />
                     <Image src={avatar8} alt="avatar" className="avatar-xs rounded-circle" />
                   </div>
                   <div className="flex-grow-1 ms-3">
@@ -245,7 +248,8 @@ const OverviewTab = () => {
                     </Link>
                     <div className="d-flex mt-4">
                       <div className="flex-shrink-0">
-                        {/* <img src={avatar10} alt="" className="avatar-xs rounded-circle" /> */}
+                        comment below img tag
+                        <img src={avatar10} alt="" className="avatar-xs rounded-circle" />
                         <Image src={avatar10} alt="avatar" className="avatar-xs rounded-circle" />
                       </div>
                       <div className="flex-grow-1 ms-3">
@@ -268,7 +272,8 @@ const OverviewTab = () => {
                 </div>
                 <div className="d-flex mb-4">
                   <div className="flex-shrink-0">
-                    {/* <img src={avatar6} alt="" className="avatar-xs rounded-circle" /> */}
+                    comment below img tag
+                    <img src={avatar6} alt="" className="avatar-xs rounded-circle" />
                     <Image src={avatar6} alt="avatar" className="avatar-xs rounded-circle" />
                   </div>
                   <div className="flex-grow-1 ms-3">
@@ -292,7 +297,8 @@ const OverviewTab = () => {
                 </div>
                 <div className="d-flex">
                   <div className="flex-shrink-0">
-                    {/* <img src={avatar10} alt="" className="avatar-xs rounded-circle" /> */}
+                    comment below img tag
+                    <img src={avatar10} alt="" className="avatar-xs rounded-circle" />
                     <Image src={avatar10} alt="avatar" className="avatar-xs rounded-circle" />
                   </div>
                   <div className="flex-grow-1 ms-3">
@@ -310,11 +316,13 @@ const OverviewTab = () => {
                     </p>
                     <Row className="g-2 mb-3">
                       <div className="col-lg-1 col-sm-2 col-6">
-                        {/* <img src={image4} alt="" className="img-fluid rounded" /> */}
+                        comment below img tag
+                        <img src={image4} alt="" className="img-fluid rounded" />
                         <Image src={image4} alt="avatar" className="img-fluid rounded" />
                       </div>
                       <div className="col-lg-1 col-sm-2 col-6">
-                        {/* <img src={image5} alt="" className="img-fluid rounded" /> */}
+                        comment below img tag
+                        <img src={image5} alt="" className="img-fluid rounded" />
                         <Image src={image5} alt="avatar" className="img-fluid rounded" />
                       </div>
                     </Row>
@@ -325,7 +333,8 @@ const OverviewTab = () => {
                     </Link>
                     <div className="d-flex mt-4">
                       <div className="flex-shrink-0">
-                        {/* <img src={avatar6} alt="" className="avatar-xs rounded-circle" /> */}
+                        comment below img tag
+                        <img src={avatar6} alt="" className="avatar-xs rounded-circle" />
                         <Image src={avatar6} alt="avatar" className="avatar-xs rounded-circle" />
                       </div>
                       <div className="flex-grow-1 ms-3">
@@ -373,340 +382,7 @@ const OverviewTab = () => {
                 </Row>
               </form>
             </CardBody>
-          </Card>
-        </Col>
-
-        <Col xl={3} lg={4}>
-          <Card>
-            <CardBody>
-              <h5 className="card-title mb-4">Skills</h5>
-              <div className="d-flex flex-wrap gap-2 fs-16">
-                <div className="badge fw-medium badge-soft-secondary">UI/UX</div>
-                <div className="badge fw-medium badge-soft-secondary">Figma</div>
-                <div className="badge fw-medium badge-soft-secondary">HTML</div>
-                <div className="badge fw-medium badge-soft-secondary">CSS</div>
-                <div className="badge fw-medium badge-soft-secondary">Javascript</div>
-                <div className="badge fw-medium badge-soft-secondary">C#</div>
-                <div className="badge fw-medium badge-soft-secondary">Nodejs</div>
-              </div>
-            </CardBody>
-          </Card>
-
-          <Card>
-            <CardHeader className="align-items-center d-flex border-bottom-dashed">
-              <h4 className="card-title mb-0 flex-grow-1">Members</h4>
-              <div className="flex-shrink-0">
-                <button
-                  type="button"
-                  className="btn btn-soft-danger btn-sm"
-                  data-bs-toggle="modal"
-                  data-bs-target="#inviteMembersModal"
-                >
-                  <i className="ri-share-line me-1 align-bottom"></i> Invite Member
-                </button>
-              </div>
-            </CardHeader>
-
-            <CardBody>
-              <SimpleBar data-simplebar style={{ height: "235px" }} className="mx-n3 px-3">
-                <div className="vstack gap-3">
-                  <div className="d-flex align-items-center">
-                    <div className="avatar-xs flex-shrink-0 me-3">
-                      {/* <img src={avatar2} alt="" className="img-fluid rounded-circle" /> */}
-                      <Image src={avatar2} alt="avatar" className="img-fluid rounded-circle" />
-                    </div>
-                    <div className="flex-grow-1">
-                      <h5 className="fs-13 mb-0">
-                        <Link href="#">
-                          <a className="text-body d-block">Nancy Martino</a>
-                        </Link>
-                      </h5>
-                    </div>
-                    <div className="flex-shrink-0">
-                      <div className="d-flex align-items-center gap-1">
-                        <button type="button" className="btn btn-light btn-sm">
-                          Message
-                        </button>
-                        <UncontrolledDropdown>
-                          <DropdownToggle
-                            type="button"
-                            className="btn btn-icon btn-sm fs-16 text-muted dropdown"
-                            tag="button"
-                          >
-                            <i className="ri-more-fill"></i>
-                          </DropdownToggle>
-                          <DropdownMenu>
-                            <li>
-                              <DropdownItem>
-                                <i className="ri-eye-fill text-muted me-2 align-bottom"></i>View
-                              </DropdownItem>
-                            </li>
-                            <li>
-                              <DropdownItem>
-                                <i className="ri-star-fill text-muted me-2 align-bottom"></i>
-                                Favourite
-                              </DropdownItem>
-                            </li>
-                            <li>
-                              <DropdownItem>
-                                <i className="ri-delete-bin-5-fill text-muted me-2 align-bottom"></i>
-                                Delete
-                              </DropdownItem>
-                            </li>
-                          </DropdownMenu>
-                        </UncontrolledDropdown>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="d-flex align-items-center">
-                    <div className="avatar-xs flex-shrink-0 me-3">
-                      <div className="avatar-title bg-soft-danger text-danger rounded-circle">
-                        HB
-                      </div>
-                    </div>
-                    <div className="flex-grow-1">
-                      <h5 className="fs-13 mb-0">
-                        <Link href="#">
-                          <a className="text-body d-block">Henry Baird</a>
-                        </Link>
-                      </h5>
-                    </div>
-                    <div className="flex-shrink-0">
-                      <div className="d-flex align-items-center gap-1">
-                        <button type="button" className="btn btn-light btn-sm">
-                          Message
-                        </button>
-                        <UncontrolledDropdown>
-                          <DropdownToggle
-                            type="button"
-                            className="btn btn-icon btn-sm fs-16 text-muted dropdown"
-                            tag="button"
-                          >
-                            <i className="ri-more-fill"></i>
-                          </DropdownToggle>
-                          <DropdownMenu>
-                            <li>
-                              <DropdownItem>
-                                <i className="ri-eye-fill text-muted me-2 align-bottom"></i>View
-                              </DropdownItem>
-                            </li>
-                            <li>
-                              <DropdownItem>
-                                <i className="ri-star-fill text-muted me-2 align-bottom"></i>
-                                Favourite
-                              </DropdownItem>
-                            </li>
-                            <li>
-                              <DropdownItem>
-                                <i className="ri-delete-bin-5-fill text-muted me-2 align-bottom"></i>
-                                Delete
-                              </DropdownItem>
-                            </li>
-                          </DropdownMenu>
-                        </UncontrolledDropdown>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="d-flex align-items-center">
-                    <div className="avatar-xs flex-shrink-0 me-3">
-                      <Image src={avatar3} alt="avatar" className="img-fluid rounded-circle" />
-                      {/* <img src={avatar3} alt="" className="img-fluid rounded-circle" /> */}
-                    </div>
-                    <div className="flex-grow-1">
-                      <h5 className="fs-13 mb-0">
-                        <Link href="#">
-                          <a className="text-body d-block">Frank Hook</a>
-                        </Link>
-                      </h5>
-                    </div>
-                    <div className="flex-shrink-0">
-                      <div className="d-flex align-items-center gap-1">
-                        <button type="button" className="btn btn-light btn-sm">
-                          Message
-                        </button>
-                        <UncontrolledDropdown>
-                          <DropdownToggle
-                            type="button"
-                            className="btn btn-icon btn-sm fs-16 text-muted dropdown"
-                            tag="button"
-                          >
-                            <i className="ri-more-fill"></i>
-                          </DropdownToggle>
-                          <DropdownMenu>
-                            <li>
-                              <DropdownItem>
-                                <i className="ri-eye-fill text-muted me-2 align-bottom"></i>View
-                              </DropdownItem>
-                            </li>
-                            <li>
-                              <DropdownItem>
-                                <i className="ri-star-fill text-muted me-2 align-bottom"></i>
-                                Favourite
-                              </DropdownItem>
-                            </li>
-                            <li>
-                              <DropdownItem>
-                                <i className="ri-delete-bin-5-fill text-muted me-2 align-bottom"></i>
-                                Delete
-                              </DropdownItem>
-                            </li>
-                          </DropdownMenu>
-                        </UncontrolledDropdown>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="d-flex align-items-center">
-                    <div className="avatar-xs flex-shrink-0 me-3">
-                      {/* <img src={avatar4} alt="" className="img-fluid rounded-circle" /> */}
-                      <Image src={avatar4} alt="avatar" className="img-fluid rounded-circle" />
-                    </div>
-                    <div className="flex-grow-1">
-                      <h5 className="fs-13 mb-0">
-                        <Link href="#">
-                          <a className="text-body d-block">Jennifer Carter</a>
-                        </Link>
-                      </h5>
-                    </div>
-                    <div className="flex-shrink-0">
-                      <div className="d-flex align-items-center gap-1">
-                        <button type="button" className="btn btn-light btn-sm">
-                          Message
-                        </button>
-                        <UncontrolledDropdown>
-                          <DropdownToggle
-                            type="button"
-                            className="btn btn-icon btn-sm fs-16 text-muted dropdown"
-                            tag="button"
-                          >
-                            <i className="ri-more-fill"></i>
-                          </DropdownToggle>
-                          <DropdownMenu>
-                            <li>
-                              <DropdownItem>
-                                <i className="ri-eye-fill text-muted me-2 align-bottom"></i>View
-                              </DropdownItem>
-                            </li>
-                            <li>
-                              <DropdownItem>
-                                <i className="ri-star-fill text-muted me-2 align-bottom"></i>
-                                Favourite
-                              </DropdownItem>
-                            </li>
-                            <li>
-                              <DropdownItem>
-                                <i className="ri-delete-bin-5-fill text-muted me-2 align-bottom"></i>
-                                Delete
-                              </DropdownItem>
-                            </li>
-                          </DropdownMenu>
-                        </UncontrolledDropdown>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="d-flex align-items-center">
-                    <div className="avatar-xs flex-shrink-0 me-3">
-                      <div className="avatar-title bg-soft-success text-success rounded-circle">
-                        AC
-                      </div>
-                    </div>
-                    <div className="flex-grow-1">
-                      <h5 className="fs-13 mb-0">
-                        <Link href="#">
-                          <a className="text-body d-block">Alexis Clarke</a>
-                        </Link>
-                      </h5>
-                    </div>
-                    <div className="flex-shrink-0">
-                      <div className="d-flex align-items-center gap-1">
-                        <button type="button" className="btn btn-light btn-sm">
-                          Message
-                        </button>
-                        <UncontrolledDropdown>
-                          <DropdownToggle
-                            tag="button"
-                            className="btn btn-icon btn-sm fs-16 text-muted dropdown"
-                          >
-                            <i className="ri-more-fill"></i>
-                          </DropdownToggle>
-                          <DropdownMenu>
-                            <li>
-                              <DropdownItem>
-                                <i className="ri-eye-fill text-muted me-2 align-bottom"></i>View
-                              </DropdownItem>
-                            </li>
-                            <li>
-                              <DropdownItem>
-                                <i className="ri-star-fill text-muted me-2 align-bottom"></i>
-                                Favourite
-                              </DropdownItem>
-                            </li>
-                            <li>
-                              <DropdownItem>
-                                <i className="ri-delete-bin-5-fill text-muted me-2 align-bottom"></i>
-                                Delete
-                              </DropdownItem>
-                            </li>
-                          </DropdownMenu>
-                        </UncontrolledDropdown>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="d-flex align-items-center">
-                    <div className="avatar-xs flex-shrink-0 me-3">
-                      {/* <img src={avatar7} alt="" className="img-fluid rounded-circle" /> */}
-                      <Image src={avatar7} alt="avatar" className="img-fluid rounded-circle" />
-                    </div>
-                    <div className="flex-grow-1">
-                      <h5 className="fs-13 mb-0">
-                        <Link href="#">
-                          <a className="text-body d-block">Joseph Parker</a>
-                        </Link>
-                      </h5>
-                    </div>
-                    <div className="flex-shrink-0">
-                      <div className="d-flex align-items-center gap-1">
-                        <button type="button" className="btn btn-light btn-sm">
-                          Message
-                        </button>
-                        <UncontrolledDropdown>
-                          <DropdownToggle
-                            tag="button"
-                            className="btn btn-icon btn-sm fs-16 text-muted dropdown"
-                          >
-                            <i className="ri-more-fill"></i>
-                          </DropdownToggle>
-                          <DropdownMenu>
-                            <li>
-                              <DropdownItem>
-                                <i className="ri-eye-fill text-muted me-2 align-bottom"></i>View
-                              </DropdownItem>
-                            </li>
-                            <li>
-                              <DropdownItem>
-                                <i className="ri-star-fill text-muted me-2 align-bottom"></i>
-                                Favourite
-                              </DropdownItem>
-                            </li>
-                            <li>
-                              <DropdownItem>
-                                <i className="ri-delete-bin-5-fill text-muted me-2 align-bottom"></i>
-                                Delete
-                              </DropdownItem>
-                            </li>
-                          </DropdownMenu>
-                        </UncontrolledDropdown>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </SimpleBar>
-            </CardBody>
-          </Card>
+          </Card> */}
           <Card>
             <CardHeader className="align-items-center d-flex border-bottom-dashed">
               <h4 className="card-title mb-0 flex-grow-1">Attachments</h4>
@@ -791,7 +467,10 @@ const OverviewTab = () => {
                         <button type="button" className="btn btn-icon text-muted btn-sm fs-18">
                           <i className="ri-download-2-line"></i>
                         </button>
-                        <UncontrolledDropdown>
+                        <button type="button" className="btn btn-icon text-muted btn-sm fs-18">
+                          <i className="ri-delete-bin-fill"></i>
+                        </button>
+                        {/* <UncontrolledDropdown>
                           <DropdownToggle
                             tag="button"
                             className="btn btn-icon text-muted btn-sm fs-18 dropdown"
@@ -813,7 +492,7 @@ const OverviewTab = () => {
                               </DropdownItem>
                             </li>
                           </DropdownMenu>
-                        </UncontrolledDropdown>
+                        </UncontrolledDropdown> */}
                       </div>
                     </div>
                   </div>
@@ -841,7 +520,10 @@ const OverviewTab = () => {
                         <button type="button" className="btn btn-icon text-muted btn-sm fs-18">
                           <i className="ri-download-2-line"></i>
                         </button>
-                        <UncontrolledDropdown>
+                        <button type="button" className="btn btn-icon text-muted btn-sm fs-18">
+                          <i className="ri-delete-bin-fill"></i>
+                        </button>
+                        {/* <UncontrolledDropdown>
                           <DropdownToggle
                             tag="button"
                             className="btn btn-icon text-muted btn-sm fs-18 dropdown"
@@ -863,7 +545,7 @@ const OverviewTab = () => {
                               </DropdownItem>
                             </li>
                           </DropdownMenu>
-                        </UncontrolledDropdown>
+                        </UncontrolledDropdown> */}
                       </div>
                     </div>
                   </div>
@@ -891,7 +573,10 @@ const OverviewTab = () => {
                         <button type="button" className="btn btn-icon text-muted btn-sm fs-18">
                           <i className="ri-download-2-line"></i>
                         </button>
-                        <UncontrolledDropdown>
+                        <button type="button" className="btn btn-icon text-muted btn-sm fs-18">
+                          <i className="ri-delete-bin-fill"></i>
+                        </button>
+                        {/* <UncontrolledDropdown>
                           <DropdownToggle
                             tag="button"
                             className="btn btn-icon text-muted btn-sm fs-18 dropdown"
@@ -913,17 +598,350 @@ const OverviewTab = () => {
                               </DropdownItem>
                             </li>
                           </DropdownMenu>
+                        </UncontrolledDropdown> */}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {/* <div className="mt-2 text-center">
+                  <button type="button" className="btn btn-success">
+                    View more
+                  </button>
+                </div> */}
+              </div>
+            </CardBody>
+          </Card>
+        </Col>
+
+        <Col xl={3} lg={4}>
+          <Card>
+            <CardBody>
+              <h5 className="card-title mb-4">Tags</h5>
+              <div className="d-flex flex-wrap gap-2 fs-16">
+                <div className="badge fw-medium badge-soft-secondary">Kyriba</div>
+                <div className="badge fw-medium badge-soft-secondary">React</div>
+                <div className="badge fw-medium badge-soft-secondary">HTML</div>
+                <div className="badge fw-medium badge-soft-secondary">CSS</div>
+                <div className="badge fw-medium badge-soft-secondary">Javascript</div>
+                {/* <div className="badge fw-medium badge-soft-secondary">C#</div> */}
+                <div className="badge fw-medium badge-soft-secondary">Nodejs</div>
+              </div>
+            </CardBody>
+          </Card>
+
+          <Card>
+            <CardHeader className="align-items-center d-flex border-bottom-dashed">
+              <h4 className="card-title mb-0 flex-grow-1">Members</h4>
+              {/* <div className="flex-shrink-0">
+                <button
+                  type="button"
+                  className="btn btn-soft-danger btn-sm"
+                  data-bs-toggle="modal"
+                  data-bs-target="#inviteMembersModal"
+                >
+                  <i className="ri-share-line me-1 align-bottom"></i> Invite Member
+                </button>
+              </div> */}
+            </CardHeader>
+
+            <CardBody>
+              <SimpleBar data-simplebar style={{ height: "235px" }} className="mx-n3 px-3">
+                <div className="vstack gap-3">
+                  <div className="d-flex align-items-center">
+                    <div className="avatar-xs flex-shrink-0 me-3">
+                      {/* <img src={avatar2} alt="" className="img-fluid rounded-circle" /> */}
+                      <Image src={avatar2} alt="avatar" className="img-fluid rounded-circle" />
+                    </div>
+                    <div className="flex-grow-1">
+                      <h5 className="fs-13 mb-0">
+                        <Link href="#">
+                          <a className="text-body d-block">Nancy Martino</a>
+                        </Link>
+                      </h5>
+                    </div>
+                    {/* <div className="flex-shrink-0">
+                      <div className="d-flex align-items-center gap-1">
+                        <button type="button" className="btn btn-light btn-sm">
+                          Message
+                        </button>
+                        <UncontrolledDropdown>
+                          <DropdownToggle
+                            type="button"
+                            className="btn btn-icon btn-sm fs-16 text-muted dropdown"
+                            tag="button"
+                          >
+                            <i className="ri-more-fill"></i>
+                          </DropdownToggle>
+                          <DropdownMenu>
+                            <li>
+                              <DropdownItem>
+                                <i className="ri-eye-fill text-muted me-2 align-bottom"></i>View
+                              </DropdownItem>
+                            </li>
+                            <li>
+                              <DropdownItem>
+                                <i className="ri-star-fill text-muted me-2 align-bottom"></i>
+                                Favourite
+                              </DropdownItem>
+                            </li>
+                            <li>
+                              <DropdownItem>
+                                <i className="ri-delete-bin-5-fill text-muted me-2 align-bottom"></i>
+                                Delete
+                              </DropdownItem>
+                            </li>
+                          </DropdownMenu>
+                        </UncontrolledDropdown>
+                      </div>
+                    </div> */}
+                  </div>
+
+                  <div className="d-flex align-items-center">
+                    <div className="avatar-xs flex-shrink-0 me-3">
+                      <div className="avatar-title bg-soft-danger text-danger rounded-circle">
+                        HB
+                      </div>
+                    </div>
+                    <div className="flex-grow-1">
+                      <h5 className="fs-13 mb-0">
+                        <Link href="#">
+                          <a className="text-body d-block">Henry Baird</a>
+                        </Link>
+                      </h5>
+                    </div>
+                    {/* <div className="flex-shrink-0">
+                      <div className="d-flex align-items-center gap-1">
+                        <button type="button" className="btn btn-light btn-sm">
+                          Message
+                        </button>
+                        <UncontrolledDropdown>
+                          <DropdownToggle
+                            type="button"
+                            className="btn btn-icon btn-sm fs-16 text-muted dropdown"
+                            tag="button"
+                          >
+                            <i className="ri-more-fill"></i>
+                          </DropdownToggle>
+                          <DropdownMenu>
+                            <li>
+                              <DropdownItem>
+                                <i className="ri-eye-fill text-muted me-2 align-bottom"></i>View
+                              </DropdownItem>
+                            </li>
+                            <li>
+                              <DropdownItem>
+                                <i className="ri-star-fill text-muted me-2 align-bottom"></i>
+                                Favourite
+                              </DropdownItem>
+                            </li>
+                            <li>
+                              <DropdownItem>
+                                <i className="ri-delete-bin-5-fill text-muted me-2 align-bottom"></i>
+                                Delete
+                              </DropdownItem>
+                            </li>
+                          </DropdownMenu>
+                        </UncontrolledDropdown>
+                      </div>
+                    </div> */}
+                  </div>
+
+                  <div className="d-flex align-items-center">
+                    <div className="avatar-xs flex-shrink-0 me-3">
+                      <Image src={avatar3} alt="avatar" className="img-fluid rounded-circle" />
+                      {/* <img src={avatar3} alt="" className="img-fluid rounded-circle" /> */}
+                    </div>
+                    <div className="flex-grow-1">
+                      <h5 className="fs-13 mb-0">
+                        <Link href="#">
+                          <a className="text-body d-block">Frank Hook</a>
+                        </Link>
+                      </h5>
+                    </div>
+                    {/* <div className="flex-shrink-0">
+                      <div className="d-flex align-items-center gap-1">
+                        <button type="button" className="btn btn-light btn-sm">
+                          Message
+                        </button>
+                        <UncontrolledDropdown>
+                          <DropdownToggle
+                            type="button"
+                            className="btn btn-icon btn-sm fs-16 text-muted dropdown"
+                            tag="button"
+                          >
+                            <i className="ri-more-fill"></i>
+                          </DropdownToggle>
+                          <DropdownMenu>
+                            <li>
+                              <DropdownItem>
+                                <i className="ri-eye-fill text-muted me-2 align-bottom"></i>View
+                              </DropdownItem>
+                            </li>
+                            <li>
+                              <DropdownItem>
+                                <i className="ri-star-fill text-muted me-2 align-bottom"></i>
+                                Favourite
+                              </DropdownItem>
+                            </li>
+                            <li>
+                              <DropdownItem>
+                                <i className="ri-delete-bin-5-fill text-muted me-2 align-bottom"></i>
+                                Delete
+                              </DropdownItem>
+                            </li>
+                          </DropdownMenu>
+                        </UncontrolledDropdown>
+                      </div>
+                    </div> */}
+                  </div>
+
+                  <div className="d-flex align-items-center">
+                    <div className="avatar-xs flex-shrink-0 me-3">
+                      {/* <img src={avatar4} alt="" className="img-fluid rounded-circle" /> */}
+                      <Image src={avatar4} alt="avatar" className="img-fluid rounded-circle" />
+                    </div>
+                    <div className="flex-grow-1">
+                      <h5 className="fs-13 mb-0">
+                        <Link href="#">
+                          <a className="text-body d-block">Jennifer Carter</a>
+                        </Link>
+                      </h5>
+                    </div>
+                    {/* <div className="flex-shrink-0">
+                      <div className="d-flex align-items-center gap-1">
+                        <button type="button" className="btn btn-light btn-sm">
+                          Message
+                        </button>
+                        <UncontrolledDropdown>
+                          <DropdownToggle
+                            type="button"
+                            className="btn btn-icon btn-sm fs-16 text-muted dropdown"
+                            tag="button"
+                          >
+                            <i className="ri-more-fill"></i>
+                          </DropdownToggle>
+                          <DropdownMenu>
+                            <li>
+                              <DropdownItem>
+                                <i className="ri-eye-fill text-muted me-2 align-bottom"></i>View
+                              </DropdownItem>
+                            </li>
+                            <li>
+                              <DropdownItem>
+                                <i className="ri-star-fill text-muted me-2 align-bottom"></i>
+                                Favourite
+                              </DropdownItem>
+                            </li>
+                            <li>
+                              <DropdownItem>
+                                <i className="ri-delete-bin-5-fill text-muted me-2 align-bottom"></i>
+                                Delete
+                              </DropdownItem>
+                            </li>
+                          </DropdownMenu>
+                        </UncontrolledDropdown>
+                      </div>
+                    </div> */}
+                  </div>
+
+                  <div className="d-flex align-items-center">
+                    <div className="avatar-xs flex-shrink-0 me-3">
+                      <div className="avatar-title bg-soft-success text-success rounded-circle">
+                        AC
+                      </div>
+                    </div>
+                    <div className="flex-grow-1">
+                      <h5 className="fs-13 mb-0">
+                        <Link href="#">
+                          <a className="text-body d-block">Alexis Clarke</a>
+                        </Link>
+                      </h5>
+                    </div>
+                    {/* <div className="flex-shrink-0">
+                      <div className="d-flex align-items-center gap-1">
+                        <button type="button" className="btn btn-light btn-sm">
+                          Message
+                        </button>
+                        <UncontrolledDropdown>
+                          <DropdownToggle
+                            tag="button"
+                            className="btn btn-icon btn-sm fs-16 text-muted dropdown"
+                          >
+                            <i className="ri-more-fill"></i>
+                          </DropdownToggle>
+                          <DropdownMenu>
+                            <li>
+                              <DropdownItem>
+                                <i className="ri-eye-fill text-muted me-2 align-bottom"></i>View
+                              </DropdownItem>
+                            </li>
+                            <li>
+                              <DropdownItem>
+                                <i className="ri-star-fill text-muted me-2 align-bottom"></i>
+                                Favourite
+                              </DropdownItem>
+                            </li>
+                            <li>
+                              <DropdownItem>
+                                <i className="ri-delete-bin-5-fill text-muted me-2 align-bottom"></i>
+                                Delete
+                              </DropdownItem>
+                            </li>
+                          </DropdownMenu>
+                        </UncontrolledDropdown>
+                      </div>
+                    </div> */}
+                  </div>
+
+                  <div className="d-flex align-items-center">
+                    <div className="avatar-xs flex-shrink-0 me-3">
+                      {/* <img src={avatar7} alt="" className="img-fluid rounded-circle" /> */}
+                      <Image src={avatar7} alt="avatar" className="img-fluid rounded-circle" />
+                    </div>
+                    <div className="flex-grow-1">
+                      <h5 className="fs-13 mb-0">
+                        <Link href="#">
+                          <a className="text-body d-block">Joseph Parker</a>
+                        </Link>
+                      </h5>
+                    </div>
+                    <div className="flex-shrink-0">
+                      <div className="d-flex align-items-center gap-1">
+                        <button type="button" className="btn btn-light btn-sm">
+                          Message
+                        </button>
+                        <UncontrolledDropdown>
+                          <DropdownToggle
+                            tag="button"
+                            className="btn btn-icon btn-sm fs-16 text-muted dropdown"
+                          >
+                            <i className="ri-more-fill"></i>
+                          </DropdownToggle>
+                          <DropdownMenu>
+                            <li>
+                              <DropdownItem>
+                                <i className="ri-eye-fill text-muted me-2 align-bottom"></i>View
+                              </DropdownItem>
+                            </li>
+                            <li>
+                              <DropdownItem>
+                                <i className="ri-star-fill text-muted me-2 align-bottom"></i>
+                                Favourite
+                              </DropdownItem>
+                            </li>
+                            <li>
+                              <DropdownItem>
+                                <i className="ri-delete-bin-5-fill text-muted me-2 align-bottom"></i>
+                                Delete
+                              </DropdownItem>
+                            </li>
+                          </DropdownMenu>
                         </UncontrolledDropdown>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div className="mt-2 text-center">
-                  <button type="button" className="btn btn-success">
-                    View more
-                  </button>
-                </div>
-              </div>
+              </SimpleBar>
             </CardBody>
           </Card>
         </Col>

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import "../styles/globals.css";
 import "../styles/scss/themes.scss";
-// import Layout from "../src/components/layout";
+import Layout from "../src/components/layout";
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
@@ -24,15 +24,19 @@ function MyApp({ Component, pageProps }) {
     changeHTMLAttribute("data-sidebar-image", "none");
   },[]);
 
+  // assign a deafult layout to all pages if not specified
+  // if(Component.noLayout) {
+  //   return <Component {...pageProps} />;
+  // }
+  // else {
+  //   return (
+  //      <Layout>
+  //       <Component {...pageProps} />
+  //    </Layout>
+  //   );
+  // }
   const getLayout = Component.getLayout || ((page) => page);
-
   return getLayout(<Component {...pageProps} />);
-
-  // return (
-  //   <Layout>
-  //     <Component {...pageProps} />
-  //   </Layout>
-  // );
 }
 
 export default MyApp;
@@ -41,3 +45,7 @@ export default MyApp;
 // TODO: split css files for fast reloaidng
 // TODO: see if you can upload with drap and drop files in create project page on multiple OS and browsers
 // TODO: see if editor works properly in create project page
+// TODO: Add Access-control-allow-orign to apis
+
+
+// TODO: reject user if it is not logged in (it should not see any page of app not even 404)

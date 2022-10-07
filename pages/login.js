@@ -234,3 +234,5 @@ const Login = (props) => {
 };
 
 export default Login;
+
+// Login.noLayout = true;

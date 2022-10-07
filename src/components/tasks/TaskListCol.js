@@ -1,19 +1,19 @@
 import React from "react";
 // import { Link } from "react-router-dom";
 import Link from "next/link";
-import Image from 'next/future/image';
-import {format, isValid} from 'date-fns';
+import Image from "next/future/image";
+import { format, isValid } from "date-fns";
 
 const handleValidDate = (date) => {
-    const d = new Date(date);
-  const date1 = isValid(d) ? format(d, "dd MMM YYYYY"): "Invalid Date";
+  const d = new Date(date);
+  const date1 = isValid(d) ? format(d, "dd MMM YYYYY") : "Invalid Date";
   return date1;
 };
 
 const OrdersId = (cell) => {
   return (
     <React.Fragment>
-      <Link href="/apps-tasks-details">
+      <Link href="/tasks/test-task">
         <a className="fw-medium link-primary">{cell.value}</a>
       </Link>
     </React.Fragment>
@@ -23,7 +23,8 @@ const OrdersId = (cell) => {
 const Project = (cell) => {
   return (
     <React.Fragment>
-      <Link href="/apps-projects-overview">
+      {/* TODO: add real projects links */}
+      <Link href="/projects/test-project">
         <a className="fw-medium link-primary">{cell.value}</a>
       </Link>
     </React.Fragment>
@@ -38,9 +39,10 @@ const Tasks = (cell, onEditIconClick, onDeleteIconClick) => {
         <div className="flex-shrink-0 ms-4">
           <ul className="list-inline tasks-list-menu mb-0">
             <li className="list-inline-item">
-              <Link href="/apps-tasks-details">
-              <a>
-                <i className="ri-eye-fill align-bottom me-2 text-muted"></i>
+            {/* TODO: add real tasks links */}
+              <Link href="/tasks/test-task">
+                <a>
+                  <i className="ri-eye-fill align-bottom me-2 text-muted"></i>
                 </a>
               </Link>
             </li>
@@ -76,11 +78,8 @@ const AssignedTo = (cell) => {
         {(cell.value || []).map((item, index) => (
           <Link key={index} href="#">
             <a className="avatar-group-item">
-            <Image 
-                src={item.img}
-                alt="image"
-                className="rounded-circle avatar-xxs"
-            />
+            {/* TODO: the below images should come in a line but they are going to next line, see them */}
+              <Image src={item.img} alt="image" className="rounded-circle avatar-xxs" />
               {/* <img src={item.img} alt="" className="rounded-circle avatar-xxs" /> */}
             </a>
           </Link>

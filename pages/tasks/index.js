@@ -1,9 +1,10 @@
-import Head from 'next/head';
 import React from 'react';
+import Head from 'next/head';
 import { Container, Row } from 'reactstrap';
 // import BreadCrumb from '../../../Components/Common/BreadCrumb';
 import AllTasks from '../../src/components/tasks/AllTasks';
 import Widgets from '../../src/components/tasks/Widgets';
+import Layout from '../../src/components/layout';
 
 
 const TaskList = () => {
@@ -27,3 +28,7 @@ const TaskList = () => {
 };
 
 export default TaskList;
+
+TaskList.getLayout = function getLayout(page) {
+    return <Layout>{page}</Layout>;
+}

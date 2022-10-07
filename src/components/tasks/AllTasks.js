@@ -1,42 +1,70 @@
-import React, { useState, useEffect, useMemo, useCallback } from 'react';
-import TableContainer from '../../utils/TableContainer';
-import DeleteModal from '../../utils/DeleteModal';
+import React, { useState, useEffect, useMemo, useCallback } from "react";
+import TableContainer from "../../utils/TableContainer";
+// import { Link } from "react-router-dom";
+import Link from "next/link";
+import Image from "next/future/image";
+import DeleteModal from "../../utils/DeleteModal";
 
 // Import Scroll Bar - SimpleBar
-import SimpleBar from 'simplebar-react';
-
+import SimpleBar from "simplebar-react";
 //Import Flatepicker
 import Flatpickr from "react-flatpickr";
 
-//redux
-import { useSelector, useDispatch } from "react-redux";
-import { Col, Modal, ModalBody, Row, Label, Input, Button, ModalHeader, FormFeedback, Form } from 'reactstrap';
-
 import {
-  getTaskList,
-  addNewTask,
-  updateTask,
-  deleteTask,
-} from "../../../store/actions";
+  Col,
+  Modal,
+  ModalBody,
+  Row,
+  Label,
+  Input,
+  Button,
+  ModalHeader,
+  FormFeedback,
+  Form,
+} from "reactstrap";
 
-import {
-  OrdersId,
-  Project,
-  CreateBy,
-  DueDate,
-  Status,
-  Priority
-} from "./TaskListCol";
+import avatar1 from "/public/images/users/avatar-1.jpg";
+import avatar2 from "/public/images/users/avatar-2.jpg";
+import avatar3 from "/public/images/users/avatar-3.jpg";
+import avatar4 from "/public/images/users/avatar-4.jpg";
+import avatar5 from "/public/images/users/avatar-5.jpg";
+import avatar6 from "/public/images/users/avatar-6.jpg";
+import avatar7 from "/public/images/users/avatar-7.jpg";
+import avatar8 from "/public/images/users/avatar-8.jpg";
+import avatar9 from "/public/images/users/avatar-9.jpg";
+import avatar10 from "/public/images/users/avatar-10.jpg";
+import bgImage1 from "/public/images/small/img-7.jpg";
+import bgImage2 from "/public/images/small/img-4.jpg";
+
+const avatars = {
+  avatar1: avatar1,
+  avatar2: avatar2,
+  avatar3: avatar3,
+  avatar4: avatar4,
+  avatar5: avatar5,
+  avatar6: avatar6,
+  avatar7: avatar7,
+  avatar8: avatar8,
+  avatar9: avatar9,
+  avatar10: avatar10,
+  bgImage1: bgImage1,
+  bgImage2: bgImage2,
+};
+
+// import { useSelector, useDispatch } from "react-redux";
+// import { getTaskList, addNewTask, updateTask, deleteTask } from "../../../store/actions";
+
+import { OrdersId, Project, CreateBy, DueDate, Status, Priority } from "./TaskListCol";
+import { allTask } from "../../test-data/task-widgets";
 
 // Formik
 import * as Yup from "yup";
 import { useFormik } from "formik";
-import { isEmpty } from "lodash";
-import { Link } from 'react-router-dom';
+// import { isEmpty } from "lodash";
 
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import Loader from '../../utils/Loader';
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Loader from "../../utils/Loader";
 
 const Assigned = [
   { id: 1, imgId: "anna-adame", img: "avatar-1.jpg", name: "Anna Adame" },
@@ -48,22 +76,23 @@ const Assigned = [
   { id: 7, imgId: "thomas-taylor", img: "avatar-8.jpg", name: "Thomas Taylor" },
   { id: 8, imgId: "tonya-noble", img: "avatar-10.jpg", name: "Tonya Noble" },
 ];
-
-
 const AllTasks = () => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  const { taskList, isTaskCreated, isTaskSuccess, error } = useSelector((state) => ({
-    taskList: state.Tasks.taskList,
-    isTaskCreated: state.Tasks.isTaskCreated,
-    isTaskSuccess: state.Tasks.isTaskSuccess,
-    error: state.Tasks.error,
-  }));
-
+  // const { isTaskCreated, error } = useSelector((state) => ({
+  //   taskList: state.Tasks.taskList,
+  //   isTaskCreated: state.Tasks.isTaskCreated,
+  //   isTaskSuccess: state.Tasks.isTaskSuccess,
+  //   error: state.Tasks.error,
+  // }));
 
   const [isEdit, setIsEdit] = useState(false);
   const [task, setTask] = useState([]);
-  const [TaskList, setTaskList] = useState([]);
+  const [taskList, setTaskList] = useState(allTask);
+  // TODO: this variable should be set to true when tasks fetched successfully
+  const isTaskSuccess = true;
+  // TODO: error descriptoin if error occured while fetching
+  const error = "Some error occured occured while fetching tasks";
 
   // Delete Task
   const [deleteModal, setDeleteModal] = useState(false);
@@ -72,9 +101,11 @@ const AllTasks = () => {
 
   const toggle = useCallback(() => {
     if (modal) {
+      console.log("modal false");
       setModal(false);
       setTask(null);
     } else {
+      console.log("modal true");
       setModal(true);
       setDate(defaultdate());
     }
@@ -86,14 +117,14 @@ const AllTasks = () => {
     setDeleteModal(true);
   };
 
-  useEffect(() => {
-    setTaskList(taskList);
-  }, [taskList]);
+  // useEffect(() => {
+  //   setTaskList(taskList);
+  // }, [taskList]);
 
   // Delete Data
   const handleDeleteTask = () => {
     if (task) {
-      dispatch(deleteTask(task._id));
+      // dispatch(deleteTask(task._id));
       setDeleteModal(false);
     }
   };
@@ -104,26 +135,28 @@ const AllTasks = () => {
     enableReinitialize: true,
 
     initialValues: {
-      taskId: (task && task.taskId) || '',
-      project: (task && task.project) || '',
-      task: (task && task.task) || '',
-      creater: (task && task.creater) || '',
-      dueDate: (task && task.dueDate) || '',
-      status: (task && task.status) || 'New',
-      priority: (task && task.priority) || 'High',
+      taskId: (task && task.taskId) || "",
+      project: (task && task.project) || "",
+      task: (task && task.task) || "",
+      creater: (task && task.creater) || "",
+      dueDate: (task && task.dueDate) || "",
+      status: (task && task.status) || "New",
+      priority: (task && task.priority) || "High",
       subItem: (task && task.subItem) || [],
     },
     validationSchema: Yup.object({
-      taskId: Yup.string().required("Please Enter Task Id"),
-      project: Yup.string().required("Please Enter Project Name"),
-      task: Yup.string().required("Please Enter Your Task"),
-      creater: Yup.string().required("Please Enter Creater Name"),
+      //TODO : validations are not showing errors in form fields, check that 
+      taskId: Yup.string().required("Please Enter Task Name"),
+      // project: Yup.string().required("Please Enter Project Name"),
+      // task: Yup.string().required("Please Enter Your Task"),
+      // creater: Yup.string().required("Please Enter Creater Name"),
       // dueDate: Yup.string().required("Please Enter Due Date"),
-      status: Yup.string().required("Please Enter Status"),
-      priority: Yup.string().required("Please Enter Priority"),
-      subItem: Yup.array().required("Please Enter")
+      // status: Yup.string().required("Please Enter Status"),
+      // priority: Yup.string().required("Please Enter Priority"),
+      // subItem: Yup.array().required("Please Enter"),
     }),
     onSubmit: (values) => {
+      console.log('toggle called in submit')
       if (isEdit) {
         const updatedTask = {
           _id: task ? task._id : 0,
@@ -137,11 +170,11 @@ const AllTasks = () => {
           subItem: values.subItem,
         };
         // update customer
-        dispatch(updateTask(updatedTask));
+        // dispatch(updateTask(updatedTask));
         validation.resetForm();
       } else {
         const newTask = {
-          _id: (Math.floor(Math.random() * (30 - 20)) + 20).toString(),
+          _id: Math.floor(Math.random() * 1000).toString(),
           taskId: values["taskId"],
           project: values["project"],
           task: values["task"],
@@ -152,7 +185,7 @@ const AllTasks = () => {
           subItem: values["subItem"],
         };
         // save new customer
-        dispatch(addNewTask(newTask));
+        // dispatch(addNewTask(newTask));
         validation.resetForm();
       }
       toggle();
@@ -160,24 +193,27 @@ const AllTasks = () => {
   });
 
   // Update Data
-  const handleCustomerClick = useCallback((arg) => {
-    const task = arg;
+  const handleCustomerClick = useCallback(
+    (arg) => {
+      const task = arg;
 
-    setTask({
-      _id: task._id,
-      taskId: task.taskId,
-      project: task.project,
-      task: task.task,
-      creater: task.creater,
-      dueDate: task.dueDate,
-      status: task.status,
-      priority: task.priority,
-      subItem: task.subItem,
-    });
+      setTask({
+        _id: task._id,
+        taskId: task.taskId,
+        project: task.project,
+        task: task.task,
+        creater: task.creater,
+        dueDate: task.dueDate,
+        status: task.status,
+        priority: task.priority,
+        subItem: task.subItem,
+      });
 
-    setIsEdit(true);
-    toggle();
-  }, [toggle]);
+      setIsEdit(true);
+      toggle();
+    },
+    [toggle]
+  );
 
   // Add Data
   const handleTaskClicks = () => {
@@ -186,29 +222,28 @@ const AllTasks = () => {
     toggle();
   };
 
-  useEffect(() => {
-    if (!isEmpty(taskList)) setTaskList(taskList);
-  }, [taskList]);
+  // useEffect(() => {
+  //   if (!isEmpty(taskList)) setTaskList(taskList);
+  // }, [taskList]);
+
+  // useEffect(() => {
+  //   if (taskList && !taskList.length) {
+  //     dispatch(getTaskList());
+  //   }
+  // }, [dispatch, taskList]);
+
+  // useEffect(() => {
+  //   setTaskList(taskList);
+  // }, [taskList]);
 
   useEffect(() => {
-    if (taskList && !taskList.length) {
-      dispatch(getTaskList());
-    }
-  }, [dispatch, taskList]);
-
-
-  useEffect(() => {
-    setTaskList(taskList);
-  }, [taskList]);
-
-  useEffect(() => {
-    if (!isEmpty(taskList)) {
+    if (Array.isArray(taskList) && taskList.length) {
       setTaskList(taskList);
       setIsEdit(false);
     }
   }, [taskList]);
 
-  // Node API 
+  // Node API
   // useEffect(() => {
   //   if (isTaskCreated) {
   //     setTask(null);
@@ -219,43 +254,59 @@ const AllTasks = () => {
   //   isTaskCreated,
   // ]);
 
-// Checked All
-const checkedAll = () => {
-  const checkall = document.getElementById("checkBoxAll");
-  const ele = document.querySelectorAll(".taskCheckBox");
+  // Checked All
+  //TODO: here check all checkboxes are checked with javascript and not with react , it may produce problem. See if problem occures and fix it
+  const checkedAll = () => {
+    const checkall = document.getElementById("checkBoxAll");
+    const ele = document.querySelectorAll(".taskCheckBox");
 
-  if (checkall.checked) {
-    ele.forEach((ele) => {
-      ele.checked = true;
-    });
-  } else {
-    ele.forEach((ele) => {
-      ele.checked = false;
-    });
-  }
-};
+    if (checkall.checked) {
+      ele.forEach((ele) => {
+        ele.checked = true;
+      });
+    } else {
+      ele.forEach((ele) => {
+        ele.checked = false;
+      });
+    }
+  };
 
-// Delete Multiple
-const deleteMultiple = () => {
-  const ele = document.querySelectorAll(".taskCheckBox:checked");
-  const checkall = document.getElementById("checkBoxAll");
-  ele.forEach((element) => {
-    dispatch(deleteTask(element.value));
-  });
-  checkall.checked = false;
-};
+  // Delete Multiple
+  //TODO: same as above
+  const deleteMultiple = () => {
+    const ele = document.querySelectorAll(".taskCheckBox:checked");
+    const checkall = document.getElementById("checkBoxAll");
+    //TODO : delete all selected tasks
+    // ele.forEach((element) => {
+    //   dispatch(deleteTask(element.value));
+    // });
+    checkall.checked = false;
+  };
 
   const columns = useMemo(
     () => [
       {
-        Header: <input type="checkbox" id="checkBoxAll" className="form-check-input" onClick={() => checkedAll()} />,
+        Header: (
+          <input
+            type="checkbox"
+            id="checkBoxAll"
+            className="form-check-input"
+            onClick={() => checkedAll()}
+          />
+        ),
         Cell: (cellProps) => {
-          return <input type="checkbox" className="taskCheckBox form-check-input" value={cellProps.row.original._id} />;
+          return (
+            <input
+              type="checkbox"
+              className="taskCheckBox form-check-input"
+              value={cellProps.row.original._id}
+            />
+          );
         },
-        id: '#',
+        id: "#",
       },
       {
-        Header: "Order ID",
+        Header: "Task ID",
         accessor: "taskId",
         filterable: false,
         Cell: (cellProps) => {
@@ -271,34 +322,53 @@ const deleteMultiple = () => {
         },
       },
       {
-        Header: "Tasks",
+        Header: "Tasks Name",
         accessor: "task",
         filterable: false,
         Cell: (cellProps) => {
-          return <React.Fragment>
-            <div className="d-flex">
-              <div className="flex-grow-1 tasks_name">{cellProps.value}</div>
-              <div className="flex-shrink-0 ms-4">
-                <ul className="list-inline tasks-list-menu mb-0">
-                  <li className="list-inline-item">
-                    <Link to="/apps-tasks-details">
-                      <i className="ri-eye-fill align-bottom me-2 text-muted"></i>
-                    </Link>
-                  </li>
-                  <li className="list-inline-item">
-                    <Link to="#" onClick={() => { const taskData = cellProps.row.original; handleCustomerClick(taskData); }}>
-                      <i className="ri-pencil-fill align-bottom me-2 text-muted"></i>
-                    </Link>
-                  </li>
-                  <li className="list-inline-item">
-                    <Link to="#" className="remove-item-btn" onClick={() => { const taskData = cellProps.row.original; onClickDelete(taskData); }}>
-                      <i className="ri-delete-bin-fill align-bottom me-2 text-muted"></i>
-                    </Link>
-                  </li>
-                </ul>
+          return (
+            <>
+              <div className="d-flex">
+                <div className="flex-grow-1 tasks_name">{cellProps.value}</div>
+                <div className="flex-shrink-0 ms-4">
+                  <ul className="list-inline tasks-list-menu mb-0">
+                    <li className="list-inline-item">
+                      <Link href="/tasks/test-task">
+                        <a>
+                          <i className="ri-eye-fill align-bottom me-2 text-muted"></i>
+                        </a>
+                      </Link>
+                    </li>
+                    <li className="list-inline-item">
+                      <Link href="#">
+                        <a
+                          onClick={() => {
+                            const taskData = cellProps.row.original;
+                            handleCustomerClick(taskData);
+                          }}
+                        >
+                          <i className="ri-pencil-fill align-bottom me-2 text-muted"></i>
+                        </a>
+                      </Link>
+                    </li>
+                    <li className="list-inline-item">
+                      <Link href="#">
+                        <a
+                          className="remove-item-btn"
+                          onClick={() => {
+                            const taskData = cellProps.row.original;
+                            onClickDelete(taskData);
+                          }}
+                        >
+                          <i className="ri-delete-bin-fill align-bottom me-2 text-muted"></i>
+                        </a>
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
               </div>
-            </div>
-          </React.Fragment>;
+            </>
+          );
         },
       },
       {
@@ -314,17 +384,25 @@ const deleteMultiple = () => {
         accessor: "subItem",
         filterable: false,
         Cell: (cell) => {
-          const assigned = cell.value.map((item) => item.img ? item.img : item);
-          return (<React.Fragment>
-            <div className="avatar-group">
-              {assigned.map((item, index) => (
-                <Link key={index} to="#" className="avatar-group-item">
-                  <img src={process.env.REACT_APP_API_URL + "/images/users/" + item} alt="" className="rounded-circle avatar-xxs" />
-                </Link>
-              ))}
-
-            </div>
-          </React.Fragment>);
+          const assigned = cell.value.map((item) => (item.img ? item.img : item));
+          // console.log(assigned, "assigned");
+          return (
+            <React.Fragment>
+              <div className="avatar-group">
+                {assigned.map((item, index) => (
+                  <Link key={index} href="#">
+                    <a className="avatar-group-item">
+                      <Image
+                        src={avatars[item]}
+                        className="rounded-circle avatar-xs"
+                        alt="user image"
+                      />
+                    </a>
+                  </Link>
+                ))}
+              </div>
+            </React.Fragment>
+          );
         },
       },
       {
@@ -357,8 +435,8 @@ const deleteMultiple = () => {
 
   const defaultdate = () => {
     let d = new Date(),
-      months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-    return ((d.getDate() + ' ' + months[d.getMonth()] + ', ' + d.getFullYear()).toString());
+      months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    return (d.getDate() + " " + months[d.getMonth()] + ", " + d.getFullYear()).toString();
   };
 
   const [date, setDate] = useState(defaultdate());
@@ -376,7 +454,7 @@ const deleteMultiple = () => {
         onDeleteClick={handleDeleteTask}
         onCloseClick={() => setDeleteModal(false)}
       />
-       <DeleteModal
+      <DeleteModal
         show={deleteModalMulti}
         onDeleteClick={() => {
           deleteMultiple();
@@ -391,8 +469,18 @@ const deleteMultiple = () => {
               <div className="d-flex align-items-center">
                 <h5 className="card-title mb-0 flex-grow-1">All Tasks</h5>
                 <div className="flex-shrink-0">
-                  <button className="btn btn-danger add-btn me-1" onClick={() => { setIsEdit(false); toggle(); }}><i className="ri-add-line align-bottom me-1"></i> Create Task</button>
-                  <button className="btn btn-soft-danger" onClick={() => setDeleteModalMulti(true)}><i className="ri-delete-bin-2-line"></i></button>
+                  <button
+                    className="btn btn-danger add-btn me-1"
+                    onClick={() => {
+                      setIsEdit(false);
+                      toggle();
+                    }}
+                  >
+                    <i className="ri-add-line align-bottom me-1"></i> Create Task
+                  </button>
+                  <button className="btn btn-soft-danger" onClick={() => setDeleteModalMulti(true)}>
+                    <i className="ri-delete-bin-2-line"></i>
+                  </button>
                 </div>
               </div>
             </div>
@@ -400,7 +488,7 @@ const deleteMultiple = () => {
               {isTaskSuccess && taskList.length ? (
                 <TableContainer
                   columns={columns}
-                  data={(taskList || [])}
+                  data={taskList || []}
                   isGlobalFilter={true}
                   isAddUserList={false}
                   customPageSize={8}
@@ -412,40 +500,48 @@ const deleteMultiple = () => {
                   handleTaskClick={handleTaskClicks}
                   isTaskListFilter={true}
                 />
-              ) : (<Loader error={error} />)
-              }
+              ) : (
+                <Loader error={error} />
+              )}
               <ToastContainer closeButton={false} />
             </div>
           </div>
         </Col>
       </div>
 
-
+      {console.log(modal, "modal")}
       <Modal
         isOpen={modal}
         toggle={toggle}
         centered
         size="lg"
         className="border-0"
-        modalClassName='modal fade zoomIn'
+        modalClassName="modal fade zoomIn"
       >
         <ModalHeader className="p-3 bg-soft-info" toggle={toggle}>
           {!!isEdit ? "Edit Task" : "Create Task"}
         </ModalHeader>
-        <Form onSubmit={(e) => {
-          e.preventDefault();
-          validation.handleSubmit();
-          return false;
-        }}>
+        <Form
+          onSubmit={(e) => {
+            e.preventDefault();
+      console.log('toggle called in form submit')
+            validation.handleSubmit();
+            return false;
+          }}
+        >
+        {/* TODO: there is huge rerenders while filling new task form , rectify it */}
           <ModalBody className="modal-body">
             <Row className="g-3">
               <Col lg={12}>
-                <Label for="taskId-field" className="form-label">Order Id</Label>
+                <Label for="taskId-field" className="form-label">
+                  Task name
+                </Label>
                 <Input
+                  //TODO: currently the field names are only renamed you have to change variable names and add validation on that variables
                   name="taskId"
                   id="taskId-field"
                   className="form-control"
-                  placeholder="Enter Task Id "
+                  placeholder="Enter Task Name"
                   type="text"
                   validate={{
                     required: { value: true },
@@ -453,9 +549,7 @@ const deleteMultiple = () => {
                   onChange={validation.handleChange}
                   onBlur={validation.handleBlur}
                   value={validation.values.taskId || ""}
-                  invalid={
-                    validation.touched.taskId && validation.errors.taskId ? true : false
-                  }
+                  invalid={validation.touched.taskId && validation.errors.taskId ? true : false}
                 />
                 {validation.touched.taskId && validation.errors.taskId ? (
                   <FormFeedback type="invalid">{validation.errors.taskId}</FormFeedback>
@@ -463,22 +557,22 @@ const deleteMultiple = () => {
               </Col>
 
               <Col lg={12}>
-                <Label for="projectName-field" className="form-label">Project Name</Label>
+                <Label for="projectName-field" className="form-label">
+                  Task ID
+                </Label>
                 <Input
                   name="project"
                   id="projectName-field"
                   className="form-control"
-                  placeholder="Project name"
+                  placeholder="Task ID (optional)"
                   type="text"
                   validate={{
-                    required: { value: true },
+                    required: { value: false },
                   }}
                   onChange={validation.handleChange}
                   onBlur={validation.handleBlur}
                   value={validation.values.project || ""}
-                  invalid={
-                    validation.touched.project && validation.errors.project ? true : false
-                  }
+                  invalid={validation.touched.project && validation.errors.project ? true : false}
                 />
                 {validation.touched.project && validation.errors.project ? (
                   <FormFeedback type="invalid">{validation.errors.project}</FormFeedback>
@@ -486,22 +580,22 @@ const deleteMultiple = () => {
               </Col>
               <Col lg={12}>
                 <div>
-                  <Label for="tasksTitle-field" className="form-label">Title</Label>
+                  <Label for="tasksTitle-field" className="form-label">
+                    Description
+                  </Label>
                   <Input
                     name="task"
                     id="tasksTitle-field"
                     className="form-control"
-                    placeholder="Title"
+                    placeholder="Task Description (optional)"
                     type="text"
                     validate={{
-                      required: { value: true },
+                      required: { value: false },
                     }}
                     onChange={validation.handleChange}
                     onBlur={validation.handleBlur}
                     value={validation.values.task || ""}
-                    invalid={
-                      validation.touched.task && validation.errors.task ? true : false
-                    }
+                    invalid={validation.touched.task && validation.errors.task ? true : false}
                   />
                   {validation.touched.task && validation.errors.task ? (
                     <FormFeedback type="invalid">{validation.errors.task}</FormFeedback>
@@ -509,8 +603,10 @@ const deleteMultiple = () => {
                 </div>
               </Col>
               <Col lg={12}>
-                <Label for="clientName-field" className="form-label">Client Name</Label>
-                <Input
+                <Label for="clientName-field" className="form-label">
+                  Client Name
+                </Label>
+                {/* <Input
                   name="creater"
                   id="clientName-field"
                   className="form-control"
@@ -522,47 +618,84 @@ const deleteMultiple = () => {
                   onChange={validation.handleChange}
                   onBlur={validation.handleBlur}
                   value={validation.values.creater || ""}
-                  invalid={
-                    validation.touched.creater && validation.errors.creater ? true : false
-                  }
+                  invalid={validation.touched.creater && validation.errors.creater ? true : false}
                 />
                 {validation.touched.creater && validation.errors.creater ? (
                   <FormFeedback type="invalid">{validation.errors.creater}</FormFeedback>
-                ) : null}
+                ) : null} */}
+                <Input
+                  name="status"
+                  type="select"
+                  className="form-select"
+                  id="ticket-field"
+                  onChange={validation.handleChange}
+                  onBlur={validation.handleBlur}
+                  value={validation.values.status || ""}
+                >
+                  <option value="">Project</option>
+                  <option value="New">Nova</option>
+                  <option value="Inprogress">Kyriba</option>
+                  <option value="Pending">Archival</option>
+                  <option value="Completed">Stem</option>
+                </Input>
               </Col>
 
               <Col lg={12}>
                 <Label className="form-label">Assigned To</Label>
                 <SimpleBar style={{ maxHeight: "95px" }}>
                   <ul className="list-unstyled vstack gap-2 mb-0">
-                    {Assigned.map((item, key) => (<li key={key}>
-                      <div className="form-check d-flex align-items-center">
-                        <Input name="subItem" className="form-check-input me-3" type="checkbox"
-                          onChange={validation.handleChange}
-                          onBlur={validation.handleBlur}
-                          value={item.img}
-                          invalid={validation.touched.subItem && validation.errors.subItem ? true : false}
-                          id={item.imgId} />
+                    {Assigned.map((item, key) => (
+                      <li key={key}>
+                        <div className="form-check d-flex align-items-center">
+                          <Input
+                            name="subItem"
+                            className="form-check-input me-3"
+                            type="checkbox"
+                            onChange={validation.handleChange}
+                            onBlur={validation.handleBlur}
+                            value={item.img}
+                            invalid={
+                              validation.touched.subItem && validation.errors.subItem ? true : false
+                            }
+                            id={item.imgId}
+                          />
 
-                        <Label className="form-check-label d-flex align-items-center" htmlFor={item.imgId}>
-                          <span className="flex-shrink-0">
-                            <img src={process.env.REACT_APP_API_URL + "/images/users/" + item.img} alt="" className="avatar-xxs rounded-circle" />
-                          </span>
-                          <span className="flex-grow-1 ms-2">
-                            {item.name}
-                          </span>
-                        </Label>
-                        {validation.touched.subItem && validation.errors.subItem ? (
-                          <FormFeedback type="invalid">{validation.errors.subItem}</FormFeedback>
-                        ) : null}
-                      </div>
-                    </li>))}
+                          <Label
+                            className="form-check-label d-flex align-items-center"
+                            htmlFor={item.imgId}
+                          >
+                            {/* {console.log(item.img, item.imgId)} */}
+                            <span className="flex-shrink-0">
+                              <Image
+                                src={"/images/users/" + item.img}
+                                // style={avatarCss}
+                                width={20}
+                                height={20}
+                                className="avatar-xxs rounded-circle"
+                                alt="user image"
+                              />
+                              {/* <img
+                                src={process.env.REACT_APP_API_URL + "/images/users/" + item.img}
+                                alt=""
+                                className="avatar-xxs rounded-circle"
+                              /> */}
+                            </span>
+                            <span className="flex-grow-1 ms-2">{item.name}</span>
+                          </Label>
+                          {validation.touched.subItem && validation.errors.subItem ? (
+                            <FormFeedback type="invalid">{validation.errors.subItem}</FormFeedback>
+                          ) : null}
+                        </div>
+                      </li>
+                    ))}
                   </ul>
                 </SimpleBar>
               </Col>
 
               <Col lg={6}>
-                <Label for="duedate-field" className="form-label">Due Date</Label>
+                <Label for="duedate-field" className="form-label">
+                  Due Date
+                </Label>
 
                 <Flatpickr
                   name="dueDate"
@@ -574,9 +707,7 @@ const deleteMultiple = () => {
                     altFormat: "d M, Y",
                     dateFormat: "d M, Y",
                   }}
-                  onChange={(e) =>
-                    dateformate(e)
-                  }
+                  onChange={(e) => dateformate(e)}
                   value={validation.values.dueDate || ""}
                 />
                 {validation.touched.dueDate && validation.errors.dueDate ? (
@@ -584,7 +715,9 @@ const deleteMultiple = () => {
                 ) : null}
               </Col>
               <Col lg={6}>
-                <Label for="ticket-status" className="form-label">Status</Label>
+                <Label for="ticket-status" className="form-label">
+                  Status
+                </Label>
                 <Input
                   name="status"
                   type="select"
@@ -592,9 +725,7 @@ const deleteMultiple = () => {
                   id="ticket-field"
                   onChange={validation.handleChange}
                   onBlur={validation.handleBlur}
-                  value={
-                    validation.values.status || ""
-                  }
+                  value={validation.values.status || ""}
                 >
                   <option value="">Status</option>
                   <option value="New">New</option>
@@ -602,15 +733,14 @@ const deleteMultiple = () => {
                   <option value="Pending">Pending</option>
                   <option value="Completed">Completed</option>
                 </Input>
-                {validation.touched.status &&
-                  validation.errors.status ? (
-                  <FormFeedback type="invalid">
-                    {validation.errors.status}
-                  </FormFeedback>
+                {validation.touched.status && validation.errors.status ? (
+                  <FormFeedback type="invalid">{validation.errors.status}</FormFeedback>
                 ) : null}
               </Col>
               <Col lg={12}>
-                <Label for="priority-field" className="form-label">Priority</Label>
+                <Label for="priority-field" className="form-label">
+                  Priority
+                </Label>
                 <Input
                   name="priority"
                   type="select"
@@ -618,20 +748,15 @@ const deleteMultiple = () => {
                   id="priority-field"
                   onChange={validation.handleChange}
                   onBlur={validation.handleBlur}
-                  value={
-                    validation.values.priority || ""
-                  }
+                  value={validation.values.priority || ""}
                 >
                   <option value="">Priority</option>
                   <option value="High">High</option>
                   <option value="Medium">Medium</option>
                   <option value="Low">Low</option>
                 </Input>
-                {validation.touched.priority &&
-                  validation.errors.priority ? (
-                  <FormFeedback type="invalid">
-                    {validation.errors.priority}
-                  </FormFeedback>
+                {validation.touched.priority && validation.errors.priority ? (
+                  <FormFeedback type="invalid">{validation.errors.priority}</FormFeedback>
                 ) : null}
               </Col>
             </Row>
@@ -644,8 +769,12 @@ const deleteMultiple = () => {
                   setModal(false);
                 }}
                 className="btn-light"
-              >Close</Button>
-              <button type="submit" className="btn btn-success" id="add-btn">{!!isEdit ? "Update Task" : "Add Task"}</button>
+              >
+                Close
+              </Button>
+              <button type="submit" className="btn btn-success" id="add-btn">
+                {!!isEdit ? "Update Task" : "Add Task"}
+              </button>
             </div>
           </div>
         </Form>

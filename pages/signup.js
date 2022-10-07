@@ -328,3 +328,5 @@ const Register = () => {
 };
 
 export default Register;
+
+// Register.noLayout = true;

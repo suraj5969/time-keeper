@@ -474,13 +474,13 @@ const TaskListGlobalFilter = () => {
           </select>
         </div>
       </div>
-      <div className="col-xxl-1 col-sm-4">
+      {/* <div className="col-xxl-1 col-sm-4">
         <button type="button" className="btn btn-primary w-100">
           {" "}
           <i className="ri-equalizer-fill me-1 align-bottom"></i>
           Filters
         </button>
-      </div>
+      </div> */}
     </React.Fragment>
   );
 };

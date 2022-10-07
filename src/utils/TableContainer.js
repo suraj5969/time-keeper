@@ -3,13 +3,14 @@ import PropTypes from "prop-types";
 import {
   useTable,
   useGlobalFilter,
-  useAsyncDebounce,
+  // useAsyncDebounce, // gives problem
   useSortBy,
   useFilters,
   useExpanded,
   usePagination,
   useRowSelect
-} from '@tanstack/react-table';
+} from 'react-table';
+import { useAsyncDebounce } from "./useAsyncDebounce";
 import { Table, Row, Col, Button, Input, CardBody } from "reactstrap";
 import { Filter, DefaultColumnFilter } from "./Filter";
 import {
@@ -55,7 +56,8 @@ function GlobalFilter({
         <form>
           <Row>
             <Col sm={5}>
-              <div className={(isProductsFilter || isContactsFilter || isCompaniesFilter || isNFTRankingFilter) ? "search-box me-2 mb-2 d-inline-block" : "search-box me-2 mb-2 d-inline-block col-12"}>
+              {/* <div className={(isProductsFilter || isContactsFilter || isCompaniesFilter || isNFTRankingFilter) ? "search-box me-2 mb-2 d-inline-block" : "search-box me-2 mb-2 d-inline-block col-12"}> */}
+              <div className={"search-box me-2 mb-2 d-inline-block col-12"}>
                 <input
                   onChange={(e) => {
                     setValue(e.target.value);
@@ -70,7 +72,7 @@ function GlobalFilter({
                 <i className="bx bx-search-alt search-icon"></i>
               </div>
             </Col>
-            {isProductsFilter && (
+            {/* {isProductsFilter && (
               <ProductsGlobalFilter />
             )}
             {isCustomerFilter && (
@@ -99,7 +101,7 @@ function GlobalFilter({
             )}
             {isNFTRankingFilter && (
               <NFTRankingGlobalFilter />
-            )}
+            )} */}
             {isTaskListFilter && (
               <TaskListGlobalFilter />
             )}
